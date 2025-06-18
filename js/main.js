@@ -20,8 +20,8 @@ cards.forEach((card) => {
     card.addEventListener("click", (e) => {
         if (locked) return; // Ignore clicks if locked
 
-        toggleImg(e.target); // Flip the selected card
-        elements.push(e.target.dataset.id); // Store its ID
+        toggleImg(e.currentTarget); // Flip the selected card
+        elements.push(e.currentTarget.dataset.id); // Store its ID
 
         // If two cards are selected, check for a match
         if (elements.length === 2) {

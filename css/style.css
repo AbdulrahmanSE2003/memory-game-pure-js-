@@ -131,3 +131,14 @@ body {
         opacity: 1;
     }
 }
+
+@media screen and (max-width: 992px) {
+    .card {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 600px) {
+    .card {
+        height: 100px;
+    }
+}
