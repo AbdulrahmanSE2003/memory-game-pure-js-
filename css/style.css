@@ -1,12 +1,133 @@
+html {
+    overflow-x: hidden;
+}
+body {
+    /* background: linear-gradient(135deg, #a18cd1, #b06b9d); */
+    background: linear-gradient(to right, #42275a, #734b6d);
+}
+
 .card {
     height: 150px;
-    border-radius: 20px;
-    -webkit-border-radius: 20px;
-    -moz-border-radius: 20px;
-    -ms-border-radius: 20px;
-    -o-border-radius: 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
     padding: 1rem 1.5rem;
     font-size: 3rem;
     margin: 0 15px;
     cursor: pointer;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 1s;
+    -webkit-transition: transform 1s;
+    -moz-transition: transform 1s;
+    -ms-transition: transform 1s;
+    -o-transition: transform 1s;
+
+    background-color: #fff;
+    border: 2px solid #e0e0e0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 1rem;
+}
+.card.flipped {
+    transform: rotateY(180deg);
+    -webkit-transform: rotateY(180deg);
+    -moz-transform: rotateY(180deg);
+    -ms-transform: rotateY(180deg);
+    -o-transform: rotateY(180deg);
+}
+
+.card.matched {
+    border-color: rgb(28, 204, 81);
+    border-width: 3px;
+}
+.card.wrong {
+    border-color: rgb(247, 61, 61);
+    border-width: 3px;
+    animation: bounceWrong 0.4s infinite;
+    -webkit-animation: bounceWrong 0.4s infinite;
+}
+
+.card > span {
+    width: 73px;
+}
+
+@keyframes bounceWrong {
+    0% {
+        transform: translateX(0);
+    }
+    25% {
+        transform: translateX(-5px);
+        -webkit-transform: translateX(-5px);
+        -moz-transform: translateX(-5px);
+        -ms-transform: translateX(-5px);
+        -o-transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(5px);
+    }
+    75% {
+        transform: translateX(-5px);
+    }
+    50% {
+        transform: translateX(0);
+    }
+}
+
+/*  code for celebration */
+.firework-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.8);
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.firework-container h1 {
+    font-size: 4rem;
+    color: gold;
+    animation: popUp 1s ease-out;
+}
+
+.confetti {
+    font-size: 5rem;
+    animation: bounce 1s infinite;
+}
+
+@keyframes popUp {
+    0% {
+        transform: scale(0);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+@keyframes bounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-20px);
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
