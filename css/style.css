@@ -132,20 +132,10 @@ body {
     }
 }
 
-@media screen and (max-width: 992px) {
-    .card {
-        font-size: 2rem;
-    }
-}
-@media screen and (max-width: 600px) {
-    .card {
-        height: 100px;
-    }
-}
-
 /* !INFO: Game V2 */
 
 .game-start {
+    width: 55%;
     opacity: 0;
     transform: translateY(75px);
     -webkit-transform: translateY(75px);
@@ -189,5 +179,21 @@ body {
         -moz-transform: translateY(0);
         -ms-transform: translateY(0);
         -o-transform: translateY(0);
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .card {
+        font-size: 2rem;
+    }
+}
+@media screen and (max-width: 768px) {
+    .game-start {
+        width: 80%;
+    }
+}
+@media screen and (max-width: 600px) {
+    .card {
+        height: 100px;
     }
 }

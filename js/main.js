@@ -1,5 +1,22 @@
 // Variables:
 let difficulty;
+const emojiList = [
+    "🍎",
+    "🍩",
+    "🍇",
+    "🍉",
+    "🍒",
+    "🍍",
+    "🥝",
+    "🥭",
+    "🍦",
+    "🍔",
+    "🍕",
+    "🍟",
+    "🍗",
+    "🍮",
+    "🍚",
+];
 
 // Handling Intro section
 const introBtns = document.querySelectorAll(".game-start .btns button");
@@ -20,34 +37,55 @@ startBtn.addEventListener("click", () => {
 
 // !INFO: Memory game V2
 function LoadGame(diff) {
+    let emojisCopy = [...emojiList];
+    let selected = [];
+
     // Make the pics dynamic
-    diff === 6
-        ? document
-              .querySelector(".game .row")
-              .classList.replace("row-cols-sm-5", "row-cols-sm-3")
-        : difficulty === 12
-        ? document
-              .querySelector(".game .row")
-              .classList.replace("row-cols-sm-5", "row-cols-sm-4")
-        : difficulty;
+
+    if (diff === 6) {
+        document
+            .querySelector(".game .row")
+            .classList.replace("row-cols-sm-5", "row-cols-sm-3");
+        document
+            .querySelector(".game .row")
+            .classList.replace("row-cols-4", "row-cols-3");
+    } else if (diff === 20) {
+        document
+            .querySelector(".game .row")
+            .classList.replace("row-cols-sm-5", "row-cols-sm-4");
+    }
 
     const parentDiv = document.querySelector(".row");
 
-    for (let i = 0; i < diff; i++) {
+    for (let i = 0; i < diff / 2; i++) {
+        let itemIdx = Math.floor(Math.random() * emojisCopy.length);
+        let emoji = emojisCopy[itemIdx];
+        emojisCopy.splice(itemIdx, 1);
+
+        selected.push(emoji);
+    }
+
+    let finalList = [...selected, ...selected];
+
+    finalList.sort(() => Math.random() - 0.5);
+
+    finalList.forEach((em) => {
         parentDiv.innerHTML += `
         <div class="col">
                     <div
                         class="card text-center p-3 px-0 d-flex justify-content-center align-items-center"
                         data-face="rear"
-                        data-id="🍔"
+                        data-id="${em}"
                         data-matched="false"
                     >
                         <span class="rear">❓</span>
-                        <span class="d-none front" data-face="front">🍔</span>
+                        <span class="d-none front" data-face="front">${em}</span>
                     </div>
                 </div>
     `;
-    }
+    });
+
+    listCopy.filter((em) => (em === item ? "" : item));
 
     // Select all card elements from the DOM
     const cards = document.querySelectorAll(".card");
