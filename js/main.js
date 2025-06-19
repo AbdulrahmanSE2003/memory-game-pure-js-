@@ -1,3 +1,26 @@
+// !INFO: Memory game V2
+
+// Make the pics dynamic
+const parentDiv = document.querySelector(".row");
+
+let num = 12;
+
+for (let i = 0; i < num; i++) {
+    parentDiv.innerHTML += `
+        <div class="col">
+                    <div
+                        class="card text-center p-3 px-0 d-flex justify-content-center align-items-center"
+                        data-face="rear"
+                        data-id="🍔"
+                        data-matched="false"
+                    >
+                        <span class="rear">❓</span>
+                        <span class="d-none front" data-face="front">🍔</span>
+                    </div>
+                </div>
+    `;
+}
+
 // Select all card elements from the DOM
 const cards = document.querySelectorAll(".card");
 
