@@ -1,3 +1,6 @@
+// Variables:
+let difficulty;
+
 // !INFO: Memory game V2
 
 // Make the pics dynamic
@@ -169,3 +172,19 @@ function endGameCelebration() {
         zIndex: 9999,
     });
 }
+
+// Handling Intro section
+const introBtns = document.querySelectorAll(".game-start .btns button");
+const startBtn = document.querySelector(".game-start .submit");
+
+introBtns.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        startBtn.classList.remove("d-none");
+        difficulty = +btn.value;
+    });
+});
+// Starting Game
+startBtn.addEventListener("click", () => {
+    document.querySelector(".game-start").classList.add("d-none");
+    document.querySelector(".game .row").classList.toggle("d-none");
+});

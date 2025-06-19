@@ -148,12 +148,25 @@ body {
 .game-start {
     opacity: 0;
     transform: translateY(75px);
-    -webkit-animation: introFade 1s linear forwards;
     -webkit-transform: translateY(75px);
     -moz-transform: translateY(75px);
     -ms-transform: translateY(75px);
     -o-transform: translateY(75px);
     animation: introFade 1s linear forwards;
+}
+
+.btns {
+    opacity: 0;
+    transform: translateY(75px);
+    -webkit-transform: translateY(75px);
+    -moz-transform: translateY(75px);
+    -ms-transform: translateY(75px);
+    -o-transform: translateY(75px);
+    animation: introFade 1s 0.3s linear forwards;
+    -webkit-animation: introFade 1s 0.3s linear forwards;
+}
+.btns button:focus {
+    border: #a3a3a3 3px solid;
 }
 
 @keyframes introFade {
