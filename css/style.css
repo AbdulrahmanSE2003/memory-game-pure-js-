@@ -189,7 +189,7 @@ body {
 }
 @media screen and (max-width: 768px) {
     .game-start {
-        width: 80%;
+        width: 100%;
     }
 }
 @media screen and (max-width: 600px) {

@@ -50,9 +50,9 @@ function LoadGame(diff) {
             .querySelector(".game .row")
             .classList.replace("row-cols-4", "row-cols-3");
     } else if (diff === 20) {
-        document
-            .querySelector(".game .row")
-            .classList.replace("row-cols-sm-5", "row-cols-sm-4");
+        // document
+        //     .querySelector(".game .row")
+        //     .classList.replace("row-cols-sm-5", "row-cols-sm-4");
     }
 
     const parentDiv = document.querySelector(".row");
@@ -84,8 +84,6 @@ function LoadGame(diff) {
                 </div>
     `;
     });
-
-    listCopy.filter((em) => (em === item ? "" : item));
 
     // Select all card elements from the DOM
     const cards = document.querySelectorAll(".card");
